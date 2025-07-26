@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.learn'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/io.github.qsy7.java.modules.browser.drivers/chromedriver
+    implementation 'io.github.qsy7.java.modules.browser.drivers:chromedriver:0.3.3'
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation 'org.testng:testng:7.11.0'
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest
+    testImplementation 'org.hamcrest:hamcrest:3.0'
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    testImplementation 'io.rest-assured:rest-assured:5.5.5'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    implementation 'org.projectlombok:lombok:1.18.38'
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation 'com.google.code.gson:gson:2.13.1'
+
+}
+
+test {
+    useTestNG()
+}
