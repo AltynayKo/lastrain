@@ -8,6 +8,7 @@ version = '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
+def allureVersion = "2.24.0"
 
 dependencies {
     // https://mvnrepository.com/artifact/io.github.qsy7.java.modules.browser.drivers/chromedriver
@@ -24,6 +25,16 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.13.1'
     // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
     implementation 'io.qameta.allure:allure-testng:2.29.1'
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-attachments
+    implementation 'io.qameta.allure:allure-attachments:2.29.1'
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-model
+    implementation 'io.qameta.allure:allure-model:2.29.1'
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    implementation 'org.apache.logging.log4j:log4j-core:2.25.1'
+    // Import allure-bom to ensure correct versions of all the dependencies are used
+    testImplementation platform("io.qameta.allure:allure-bom:$allureVersion")
+    // Add necessary Allure dependencies to dependencies section
+    testImplementation "io.qameta.allure:allure-testng"
 
 }
 allure {
