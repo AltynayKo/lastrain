@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class RestFund extends BaseModel{
     @FindBy (id = "rest")
@@ -14,6 +16,7 @@ public class RestFund extends BaseModel{
     }
 
     public String getPageLabel(){
+        wait.until(ExpectedConditions.visibilityOf(pageLabel));
         return pageLabel.getText();
     }
 }

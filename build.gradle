@@ -1,7 +1,7 @@
 plugins {
-    id 'java'
+    id 'java' // Or 'kotlin', 'groovy', etc., depending on your project
+    id 'io.qameta.allure' version '2.11.2' // Use the latest stable version
 }
-
 group = 'com.learn'
 version = '1.0-SNAPSHOT'
 
@@ -22,7 +22,16 @@ dependencies {
     implementation 'org.projectlombok:lombok:1.18.38'
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation 'com.google.code.gson:gson:2.13.1'
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
+    implementation 'io.qameta.allure:allure-testng:2.29.1'
 
+}
+allure {
+    version = '2.14.0' // Specify the Allure commandline version
+    // Example for JUnit 5 integration:
+    useTestNG {
+        version = '2.14.0' // Specify the Allure JUnit 5 adapter version
+    }
 }
 
 test {
